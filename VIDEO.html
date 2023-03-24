@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VIDEO DEMO</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <div class="YTV">
+        <h1>OUR POPULAR  VIDEOS</h1>
+        <div class="video-container">
+            <div class="video"><video src="images/video1.mp4" muted width="850px"></video></div>
+            <div class="video"><video src="images/video2.mp4" muted width="850px"></video></div>
+            <div class="video"><video src="images/video3.mp4" muted width="850px"></video></div>
+            <div class="video"><video src="images/video4.mp4" muted width="850px"></video></div>
+            <div class="video"><video src="images/video5.mp4" muted width="850px"></video></div>
+            <div class="video"><video src="images/video6.mp4" muted width="850px"></video></div>
+            
+        </div>
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="images/video1.mp4" muted autoplay controls width="850px"></video>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.video-container video').forEach(vid => {
+          vid.onclick =() =>{
+            document.querySelector('.popup-video').style.display = 'block';
+            document.querySelector('.popup-video video').src = vid.getAttribute('src');
+          }
+        });
+        document.querySelector('.popup-video span').onclick = () =>{
+            document.querySelector('.popup-video').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
